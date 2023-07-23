@@ -1,0 +1,392 @@
+// nav 
+nav {
+  .logo {
+    background-image: url('/img/Layout-page/logo-white.png');
+    background-size: contain;
+    width: 80px;
+    height: 49px;
+    display: block;
+    @include hide-text;
+  }
+  .navigation a, .logo {
+    transition: all 0.3s;
+    &:hover {
+      transform:  scale(1.2);
+      font-weight: map-get($font-weight-type , bold);
+    }
+  }
+  .icon {
+    display: none;
+  }
+  @include mobile {
+    .navigation {
+      position: absolute;
+      flex-wrap: wrap;
+      width: 100%;
+      top: 100%;
+      margin-top: 16px;
+      margin-left: -12px;
+      text-align: center;
+      li {
+        width: 50%;
+        a {
+          display: block;
+          font-size: 16px;
+          margin: 0;
+          padding: 12px 0;
+          border: 1px solid map-get($color-type, light);
+          &:hover {
+            background: map-get($color-type, light);
+            border: 1px solid map-get($color-type, primary);
+            color: map-get($color-type, primary);
+            transform: none;
+          }
+        }
+      }
+    }
+    .icon {
+      display: block;
+    }
+  }
+}
+
+// header 
+header {
+  background-image: url('/img/Index-page/home-header.png');
+  background-size: cover;
+  height: 100vh;
+  @include pad {
+    background-image: url('/img/Index-page/home-header-sm.png');
+  }
+  .header-wrap {
+    height: 100%;
+    text-align: end;
+    @include mobile {
+      p {
+        font-size: 16px;
+      }
+    }
+    h1 {
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+    button {
+      padding: 6px 12px;
+      border: 1px solid map-get($color-type, primary);
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        color: map-get($color-type, primary);
+        background: map-get($color-type, light);
+      }
+    }
+  }
+}
+
+//serve-wrap 
+.serve-wrap {
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  h3 {
+    @include mobile {
+      font-size: map-get($font-size-type, 4);
+    }
+  }
+  ul {
+    @include pad {
+      flex-wrap: wrap;
+    }
+  }
+  li {
+    width: 24%;
+    @include pad {
+      width: 49%;
+      &:nth-child(-n+2) {
+        margin-bottom: map-get($spacer-type, 3);
+      }
+    }
+    @include mobile {
+      width: 100%;
+      &:nth-child(-n+3) {
+        margin-bottom: map-get($spacer-type, 3);
+      }
+    }
+  }
+}
+
+// products-wrap 
+.products-wrap {
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  h3 {
+    @include mobile {
+      font-size: map-get($font-size-type, 4);
+      margin-bottom: map-get($spacer-type, 3);
+    }
+  }
+  ul {
+    @include pad {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  li {
+    width: 32%;
+    @include pad {
+      width: 60%;
+      &:nth-child(-n+2) {
+        margin-bottom: map-get($spacer-type, 3);
+      }
+    }
+    @include mobile {
+      width: 100%;
+    }
+    p {
+      font-style: italic;
+    }
+  }
+}
+
+// design-wrap
+.design-wrap {
+  background-image: url('/img/Index-page/index-bg.png');
+  background-size: cover;
+  @include pad {
+    background-image: url(/img/Index-page/index-bg-md.png);
+  }
+  @include mobile {
+    background-image: url(/img/Index-page/index-bg-sm.png);
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  h3 {
+    @include mobile {
+      font-size: map-get($font-size-type, 4);
+      margin-bottom: map-get($spacer-type, 3);
+    }
+  }
+  .design-item {
+    @include pad {
+      flex-direction: column;
+    }
+    li {
+      @include pad {
+        &:nth-child(1) {
+          margin-bottom: map-get($spacer-type, 3);
+        }
+      }
+    }
+    .desing-img-1 {
+      @include mobile {
+        content: url('/img/Index-page/home-section4-1-sm.png');
+        width: 100%;
+      }
+    }
+    .desing-img-2 {
+      @include mobile {
+        content: url('/img/Index-page/home-section4-2-sm.png');
+        width: 100%;
+      }
+    }
+    p {
+      font-style: italic;
+    }
+  }
+}
+
+// redommend-wrap
+.recommend-wrap {
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  h3 {
+    @include mobile {
+      font-size: map-get($font-size-type, 3);
+      margin-bottom: map-get($spacer-type, 3);
+    }
+  }
+  .recommend-item {
+    @include pad {
+      flex-wrap: wrap;
+    }
+  }
+  .recommend-card {
+    width: 24%;
+    border-radius: 4px;
+    box-shadow: 0px 2px 6px #00000029;
+    @include pad {
+      width: 48%;
+      &:nth-child(-n+2) {
+        margin-bottom: map-get($spacer-type, 3);
+      }
+    }
+    @include mobile {
+      width: 100%;
+      &:nth-child(4) {
+        margin-bottom: 0;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .card-muted {
+      margin-top: 72px;
+      font-size: 14px;
+      color: #707070;
+      @include pad {
+        margin-top: 96px;
+      }
+    }
+  }
+}
+
+// contact-wrap 
+.contact-wrap {
+  background: #FBF2F2;
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .contact-item {
+    max-width: 636px;
+    h3 {
+      @include pad {
+        margin-bottom: map-get($spacer-type, 3);
+      }
+      @include mobile {
+        font-size: map-get($font-size-type, 4);
+      }
+    }
+    p {
+      @include pad {
+        font-size: map-get($font-size-type, 6);
+      }
+    }
+    input, textarea {
+      padding: 6px 12px;
+      line-height: 1.5;
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.2)
+      }
+    }
+    .form-check {
+      input {
+        width: 24px;
+        height: 24px;
+      }
+      @include mobile {
+        align-items: flex-start;
+      }
+    }
+    button {
+      margin: 0 auto;
+      padding: 12px 176px;
+      margin-top: 64px;
+      border: 1px solid map-get($color-type, secondary);
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        color: map-get($color-type, primary);
+        background: map-get($color-type, light);
+      }
+      @include pad {
+        margin-top: map-get($spacer-type, 5);
+        padding: 12px 136px;
+      }
+      @include mobile {
+        width: 100%;
+        padding: 16px 0;
+        margin-top: map-get($spacer-type, 3);
+      }
+    }
+  }
+}
+
+// footer
+.footer {
+  a {
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  @include mobile {
+    padding-top: map-get($spacer-type, 3);
+  }
+  .footer-wrap {
+    border-bottom: 1px solid white;
+    @include mobile {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+  .footer-nav {
+    @include mobile {
+      display: none;
+    }
+  }
+  .footer-link li {
+    @include pad {
+      &:nth-child(2) {
+        margin-left: map-get($spacer-type, 2);
+        margin-right: map-get($spacer-type, 2);
+      }
+    }
+  }
+  img {
+    width: 48px;
+    height: 48px;
+    @include pad {
+      width: 40px;
+      height: 40px;
+    }
+    @include mobile {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .footer-body {
+    @include mobile {
+      padding-bottom: map-get($spacer-type, 3);
+    }
+    i {
+      margin-right: 20px;
+      @include mobile {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+    }
+    a {
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+  .copy-item {
+    @include mobile {
+      flex-direction: column;
+      padding-top: map-get($spacer-type, 3);
+      padding-bottom: map-get($spacer-type, 3);
+    }
+    .copy-text {
+      @include mobile {
+        flex-direction: column;
+      }
+      a {
+       font-size: 14px;
+       @include mobile {
+         font-size: map-get($font-size-type, 6);
+         margin: 8px 0 0 0;
+       }
+     }
+    }
+  }
+}
